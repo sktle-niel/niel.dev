@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  niel.dev — Modern Minimal / Poster design tokens (Tailwind v4)    */
+/* ------------------------------------------------------------------ */
+@theme {
+  --color-canvas: #fbfbfa; /* warm off-white page background */
+  --color-surface: #ffffff; /* cards / panels */
+  --color-ink: #18181b; /* primary charcoal text (never pure black) */
+  --color-ink-soft: #3f3f46; /* softer headings */
+  --color-muted: #6f6f6a; /* secondary text */
+  --color-line: #eceae5; /* hairline borders / dividers */
+  --color-brand: #c2f000; /* niel.dev lime — used sparingly as accent */
+  --color-brand-soft: #eef4e8; /* pale green surface (icon tiles / tags) */
+  --color-brand-ink: #2f6b33; /* readable green text on pale surface */
+
+  --font-poster: "Archivo Black", "Archivo", ui-sans-serif, sans-serif;
+  --font-sans: "Archivo", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Base                                                              */
+/* ------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Keep section tops clear of the sticky header when scrolled to. */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-brand);
+  color: var(--color-ink);
+}
+
+/* Quiet scrollbar */
+::-webkit-scrollbar {
+  width: 11px;
+}
+::-webkit-scrollbar-thumb {
+  background: #dedcd6;
+  border: 3px solid var(--color-canvas);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cfcdc6;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Utilities                                                         */
+/* ------------------------------------------------------------------ */
+
+/* Poster grotesque display helper (Archivo Black ships one weight: 400) */
+.font-display {
+  font-family: var(--font-poster);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
+/* Soft warm ambient light (adds depth without breaking the calm) */
+.ambient {
+  background:
+    radial-gradient(
+      50% 40% at 75% 0%,
+      rgba(194, 240, 0, 0.07) 0%,
+      rgba(194, 240, 0, 0) 70%
+    ),
+    radial-gradient(
+      45% 45% at 10% 20%,
+      rgba(0, 0, 0, 0.025) 0%,
+      rgba(0, 0, 0, 0) 70%
+    );
+}
+
+/* Floating deck cards: a slow bob on `transform`, timed per card through
+   --float-delay / --float-duration so the deck drifts out of phase. The hover
+   lift uses the separate `translate` / `scale` properties, so a lifted card
+   keeps floating instead of snapping. */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float {
+  animation: float var(--float-duration, 6s) ease-in-out
+    var(--float-delay, 0s) infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .float {
+    animation: none;
+  }
+}
