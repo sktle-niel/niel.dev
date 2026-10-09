@@ -70,9 +70,7 @@ export function Card({
         >
           <div className="flex h-full flex-col">
             <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.16em] opacity-70">
-              <span>
-                {card.index} · {card.title}
-              </span>
+              <span>{card.title}</span>
               <Arrow />
             </div>
             <div className="mt-auto">{children}</div>

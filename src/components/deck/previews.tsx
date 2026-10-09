@@ -20,12 +20,30 @@ function CardTitle({ children, sub }: { children: ReactNode; sub?: string }) {
 export function ProfilePreview() {
   return (
     <div className="flex items-end gap-3">
-      <span
-        aria-hidden
-        className="grid size-10 shrink-0 place-items-center rounded-lg bg-brand font-sans text-lg font-extrabold text-ink"
-      >
-        {PROFILE.firstName[0]}
-      </span>
+      {/* Notion-style block: lime faces, ink outline, serif initial. */}
+      <svg aria-hidden viewBox="0 0 48 48" className="size-10 shrink-0">
+        <g
+          transform="rotate(-2 24 24)"
+          stroke="var(--color-ink)"
+          strokeWidth="2.6"
+          strokeLinejoin="round"
+        >
+          <path d="M10.2 14.6 L15.6 5.8 L43 4.8 L39.8 12.9 Z" fill="var(--color-brand)" />
+          <rect x="9.5" y="13" width="30.5" height="29" rx="4.5" fill="var(--color-brand)" />
+        </g>
+        <text
+          x="25.2"
+          y="35.8"
+          textAnchor="middle"
+          fontFamily="Georgia, 'Times New Roman', serif"
+          fontWeight="700"
+          fontSize="21"
+          fill="var(--color-ink)"
+          transform="rotate(-2 24 24)"
+        >
+          {PROFILE.firstName[0]}
+        </text>
+      </svg>
       <div className="min-w-0">
         <h3 className="truncate font-display text-2xl leading-none lg:text-xl xl:text-2xl">
           {PROFILE.name}
