@@ -24,7 +24,7 @@ export const PROFILE = {
     "I'm Niel Patrick Ladica, a full-stack developer from Puerto Princesa City, Palawan. I studied BS Information Technology at Palawan Technological College (2022–2026), where I received the Programmer of the Year award.",
     "Since January 2025 I've been a Junior Software Engineer at Two Wheels Zone — I developed and deployed a full-stack application integrated with Loyverse POS, built the company's responsive website with email-based franchise inquiries, and shipped a PWA that audits cash-on-hand sales and validates BDO and BPI receipts.",
     "Outside work I've shipped a school event tabulation system for pageants, game scoreboards, and Battle of the Bands; a web-based POS and inventory system for a local clothing and apparel business; and the Travel Wise Palawan travel site. As project manager of the Information Communication Club (IC2), I maintained voting and tabulation systems used in school and barangay pageant events.",
-    "Day to day I work with JavaScript/TypeScript, React, Node.js, PHP (Laravel), and MySQL — plus Git, REST APIs, and AWS.",
+    "Day to day I work with JavaScript/TypeScript, React, Node.js, PHP (Laravel), and MySQL — plus Git, REST APIs, and AWS. I'm also an AI-assisted developer: I use AI coding agents and LLM workflows daily to design, build, and ship faster.",
   ],
 } as const;
 
@@ -109,23 +109,20 @@ export const SKILLS: SkillGroup[] = [
       "phpMyAdmin",
     ],
   },
+  {
+    title: "AI for development",
+    items: [
+      "AI coding agents",
+      "AI-assisted development",
+      "Prompt engineering",
+      "LLM API integration",
+      "AI code review",
+    ],
+  },
 ];
 
 /** Short list for the landing card. */
-export const SKILL_CHIPS = ["React", "TypeScript", "PHP", "MySQL", "Flutter", ".NET", "Tailwind"];
-
-/** What I build — the kinds of projects I take on. */
-export const BUILDS = [
-  "Business websites",
-  "Landing pages",
-  "Web systems & portals",
-  "Booking & travel platforms",
-  "Inventory systems",
-  "Library systems",
-  "Capstone / thesis systems",
-  "Desktop apps",
-  "Mobile apps",
-];
+export const SKILL_CHIPS = ["React", "TypeScript", "PHP", "MySQL", "Flutter", ".NET", "AI tools"];
 
 export const CONTACT = {
   email: "niel.ladica07@gmail.com",

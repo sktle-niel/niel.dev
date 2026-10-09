@@ -6,7 +6,6 @@ export type CardId = "profile" | "projects" | "skills" | "activity" | "contact";
 
 export type CardDef = {
   id: CardId;
-  index: string;
   title: string;
   blurb: string;
   to: string;
@@ -26,7 +25,6 @@ export type CardDef = {
 export const CARDS: CardDef[] = [
   {
     id: "profile",
-    index: "01",
     title: "Profile",
     blurb: "Who I am and how I work.",
     to: "/profile",
@@ -39,7 +37,6 @@ export const CARDS: CardDef[] = [
   },
   {
     id: "projects",
-    index: "02",
     title: "Projects",
     blurb: "Live sites and systems I've shipped.",
     to: "/projects",
@@ -52,7 +49,6 @@ export const CARDS: CardDef[] = [
   },
   {
     id: "skills",
-    index: "03",
     title: "Skills",
     blurb: "The stack I build with.",
     to: "/skills",
@@ -65,7 +61,6 @@ export const CARDS: CardDef[] = [
   },
   {
     id: "activity",
-    index: "04",
     title: "Activity",
     blurb: "Every square is a visitor.",
     to: "/activity",
@@ -78,7 +73,6 @@ export const CARDS: CardDef[] = [
   },
   {
     id: "contact",
-    index: "05",
     title: "Contact",
     blurb: "Let's build something.",
     to: "/contact",
